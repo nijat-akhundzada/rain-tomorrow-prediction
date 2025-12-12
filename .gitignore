@@ -11,3 +11,9 @@ wheels/
 
 # Trained models
 *.pkl
+
+# Lint and Format (Ruff)
+.ruff_cache
+
+# MacOS junk files
+.DS_Store

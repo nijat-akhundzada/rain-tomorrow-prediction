@@ -15,3 +15,38 @@ dependencies = [
     "seaborn>=0.13.2",
     "xgboost>=3.1.2",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.9",
+]
+
+
+# --- Ruff configuration ---
+[tool.ruff]
+line-length = 95
+target-version = "py314"
+
+
+# Enable common linting rules
+[tool.ruff.lint]
+extend-select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "B",   # bugbear (common bugs)
+    "I",   # import sorting
+]
+ignore = ["B008"]
+exclude = [
+    "**/.git",
+    "**/.ruff_cache",
+    "**/.venv",
+    "**/__pypackages__",
+    "*/migrations/*", 
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
